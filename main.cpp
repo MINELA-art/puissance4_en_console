@@ -229,9 +229,13 @@ bool gagnant (int grid[7][6]){
                 std::cout<<"LE JOUEUR 1 A GAGNE\n";
                 return true;
                 break;
-            }else if (grid[ligne][col]==2 && grid[ligne][col +1]==2 && grid[ligne][col+2]==2 && grid[ligne][col+3]==2 ||
-            grid[ligne][col]==2 && grid[ligne +1][col +1]==2 && grid[ligne+2][col+2]==2 && grid[ligne+3][col+3]==2 ||
-            grid[ligne][col]==2 && grid[ligne+1][col]==2 && grid[ligne+2][col]==2 && grid[ligne+3][col]==2)
+            }else if (
+                grid[ligne][col]==2 && grid[ligne][col +1]==2 && grid[ligne][col+2]==2 && grid[ligne][col+3]==2 ||
+                grid[ligne][col]==2 && grid[ligne +1][col +1]==2 && grid[ligne+2][col+2]==2 && grid[ligne+3][col+3]==2 ||
+                grid[ligne][col]==2 && grid[ligne+1][col]==2 && grid[ligne+2][col]==2 && grid[ligne+3][col]==2||
+                grid[ligne][col]==2 && grid[ligne-1][col-1]==2 && grid[ligne-2][col-2]==2 && grid[ligne-3][col-3]==2 ||
+                grid[ligne][col]==2 && grid[ligne+1][col-1]==2 && grid[ligne+2][col-2]==2 && grid[ligne+3][col-3]==2 ||
+                grid[ligne][col]==2 && grid[ligne-1][col+1]==2 && grid[ligne-2][col+2]==2 && grid[ligne-3][col+3]==2)
             {
                 std::cout<<"LE JOUEUR 2 A GAGNE\n";
                 return true;
