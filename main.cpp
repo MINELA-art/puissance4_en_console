@@ -218,10 +218,13 @@ bool playTurn(int grid[7][6], int column, int player){
 bool gagnant (int grid[7][6]){
     for (int ligne = 0; ligne < 6; ligne++){
         for (int col = 0; col < 7; col++){
-            if (grid[ligne][col]==1 && grid[ligne][col +1]==1 && grid[ligne][col+2]==1 && grid[ligne][col+3]==1 ||
+            if (
+            grid[ligne][col]==1 && grid[ligne][col +1]==1 && grid[ligne][col+2]==1 && grid[ligne][col+3]==1 ||
             grid[ligne][col]==1 && grid[ligne +1][col +1]==1 && grid[ligne+2][col+2]==1 && grid[ligne+3][col+3]==1 ||
             grid[ligne][col]==1 && grid[ligne+1][col]==1 && grid[ligne+2][col]==1 && grid[ligne+3][col]==1 ||
-            grid[ligne][col]==1 && grid[ligne-1][col-1]==1 && grid[ligne-2][col-2]==1 && grid[ligne-3][col-3]==1)
+            grid[ligne][col]==1 && grid[ligne-1][col-1]==1 && grid[ligne-2][col-2]==1 && grid[ligne-3][col-3]==1 ||
+            grid[ligne][col]==1 && grid[ligne-1][col+1]==1 && grid[ligne-2][col+2]==1 && grid[ligne-3][col+3]==1 ||
+            grid[ligne][col]==1 && grid[ligne+1][col-1]==1 && grid[ligne+2][col-2]==1 && grid[ligne+3][col-3]==1)
             {
                 std::cout<<"LE JOUEUR 1 A GAGNE\n";
                 return true;
